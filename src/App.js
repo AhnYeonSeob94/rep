@@ -27,21 +27,84 @@ const choice = {
 
 
 function App() {
-  const [userSelect,setUserSelect] = useState(null)
+  const [userSelect,setUserSelect] = useState(null);
+  const [computerSelect,setComputerSelect] = useState(null);
+  const [res,setResult] = useState(null);
+  const [comres,setComResult] = useState(null);
 
-  const play=(userChoice) =>{
-    setUserSelect(choice[userChoice]) 
+  const [count, setCount] = useState(0);
+  const [winCount, setWinCount] = useState(0);
+  const [loseCount, setLoseCount] = useState(0);
+  const [drawCount, setDrawCount] = useState(0);
+
+
+  const play = (userChoice) => {
+    let userRes = "";
+    let comRes = "";
+
+    setUserSelect(choice[userChoice]); 
+    
+    let computerChoice = randomChoice();
+    setComputerSelect(choice[computerChoice]);
+
+    if (
+      (userChoice === "scissors" && computerChoice === "paper") ||
+      (userChoice === "rock" && computerChoice === "scissors") ||
+      (userChoice === "paper" && computerChoice === "rock")
+    ) {
+      userRes = "win";
+      comRes = "lose";
+      setWinCount(winCount + 1);
+    } else if (userChoice === computerChoice) {
+      userRes = "draw";
+      comRes = "draw";
+      setDrawCount(drawCount + 1);
+    } else {
+      userRes = "lose";
+      comRes = "win";
+      setLoseCount(loseCount + 1);
+    }
+
+    setResult(userRes);
+    setComResult(comRes);
+    setCount(count + 1);
+  };
+
+  const randomChoice=()=>{
+    let itemArr = Object.keys(choice); //객체에 키값만 뽑아서 배열로 만들어주는 함수
+    
+    let ran = Math.floor(Math.random()*itemArr.length);
+    let final = itemArr[ran]
+    
+    return final
   }
+
+  const winRate = count > 0 ? ((winCount / count) * 100).toFixed(2) : 0;
+
   return (
     <div>
+      <h1>가위 바위 보! 게임</h1>
       <div className='main'>
-        <Box title="You" item={userSelect}/>
-        <Box title="Computer"/>
+        <Box title="You" item={userSelect} result={res} />
+        <Box title="Computer" item={computerSelect} result={comres}/>
       </div>
       <div className='main'>
-        <button onClick={()=>play("scissors")}>가위</button>
-        <button onClick={()=>play("rock")}>바위</button>
-        <button onClick={()=>play("paper")}>보</button>
+        <button onClick={()=>play("scissors")}>
+          <i className="fa-solid fa-hand-scissors"></i>
+        </button>
+        <button onClick={()=>play("rock")}>
+          <i className="fa-solid fa-hand-back-fist"></i>
+        </button>
+        <button onClick={()=>play("paper")}>
+          <i className="fa-solid fa-hand"></i>
+        </button>
+      </div>
+      <div className="scoreboard">
+        <div className="score-card">총 경기 <br /> {count}</div>
+        <div className="score-card win-score">승리 <br /> {winCount}</div>
+        <div className="score-card lose-score">패배 <br /> {loseCount}</div>
+        <div className="score-card draw-score">무승부 <br /> {drawCount}</div>
+        <div className="score-card win-rate">승률 <br /> {winRate}%</div>
       </div>
     </div>
   );
