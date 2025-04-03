@@ -1,4 +1,4 @@
-#250403 React Lifecycle & Class Component
+**#250403 React Lifecycle & Class Component**
 
 ## Lifecycle
 ✅ 마운트(Mount): 컴포넌트가 생성되어 DOM에 추가되는 단계
