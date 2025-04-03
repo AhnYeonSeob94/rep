@@ -26,7 +26,7 @@
 <p>function 사용시 index.js에서 <App/>으로 수정 필요</p>
 <p>class component 사용시 <AppClass/>로 수정 필요</p>
 <p>일반컴포넌트 racfe / 클래스컴포넌트 rcc</p>
-![스크린샷 2025-04-03 185724](https://github.com/user-attachments/assets/c168547e-a636-4a93-be37-8aef9f654163)
+![함수형](https://raw.githubusercontent.com/AhnYeonSeob94/rep/lifecycle%EA%B3%BCclasscomponent/images/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-03%20185724.png)
 ![스크린샷 2025-04-03 185828](https://github.com/user-attachments/assets/4d5cdddd-be7f-45b2-8705-44b325c7e552)
 ![스크린샷 2025-04-03 185903](https://github.com/user-attachments/assets/0c3a945b-860d-4c3e-a7d1-8d630b2207db)
 
