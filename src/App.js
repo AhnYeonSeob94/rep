@@ -33,6 +33,7 @@ function App() {
         return "https://videos.pexels.com/video-files/1771850/1771850-hd_1920_1080_30fps.mp4";
       case "clouds":
         return "https://videos.pexels.com/video-files/855785/855785-hd_1920_1080_24fps.mp4";
+      case "mist":
       case "rain":
       case "drizzle":
         return "https://videos.pexels.com/video-files/7663345/7663345-uhd_2732_1440_24fps.mp4";
