@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import WeatherBox from './component/WeatherBox';
 import WeatherButton from './component/WeatherButton';
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 // 1. 앱이 실행되자마자 현재 위치기반의 날씨가 보인다.
 // 2. 날씨정보에는 도시, 섭씨, 화씨 날씨상태
@@ -13,6 +15,7 @@ import WeatherButton from './component/WeatherButton';
 // 6. 데이터를 들고오는 동안 로딩스피너가 돈다 
 
 function App() {
+  const [loading,setLoading] = useState(false);
   const [latitude, setLat] = useState(0); 
   const [longitude, setLon] = useState(0);
   const [weather, setWeather] = useState(null);
@@ -20,6 +23,29 @@ function App() {
   const apikey = "8880379cdba05b6bff7c604549ba8f53";
   
   const cities = ["Seoul", "New York", "London", "Tokyo"];
+
+  const getWeatherVideo = (weather) => {
+    if (!weather || !weather.weather || weather.weather.length === 0) return null;
+    const main = weather.weather[0].main.toLowerCase();
+  
+    switch (main) {
+      case "clear":
+        return "/video/clear.mp4";
+      case "clouds":
+        return "/video/clouds.mp4";
+      case "rain":
+      case "drizzle":
+        return "/video/rain.mp4";
+      case "snow":
+        return "/video/snow.mp4";
+      case "thunderstorm":
+        return "/video/thunder.mp4";
+      default:
+        return null;
+    }
+  };
+
+
 
   //현재 위치 가져오기 위도경도 설정
   const getCurrentLocation=()=>{
@@ -37,11 +63,13 @@ function App() {
   //위도 경도로 날씨데이터 가져오기
   const getWeatherByCoords = async (lat, lon) => {
     try {
+      setLoading(true);
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}&units=metric`
       );
       const data = await res.json();
       setWeather(data);
+      setLoading(false);
     } catch (err) {
       console.error("좌표로 날씨 가져오기 실패!", err);
     }
@@ -49,11 +77,13 @@ function App() {
 
   const getWeatherByCity = async (city) =>{
     try {
+      setLoading(true);
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
       );
       const data = await res.json();
       setWeather(data);
+      setLoading(false);
     } catch (err) {
       console.error("도시명으로 날씨 가져오기 실패!", err);
     }
@@ -61,7 +91,7 @@ function App() {
 
   const changeCity = (city) =>{
     setSelectedCity(city);
-    if(city === null){
+    if(city === null || city === ""){
       //선택 도시 없으면 현재 위치
       getCurrentLocation();
     }else{
@@ -86,7 +116,23 @@ function App() {
 
   return (
     <div>
-      <div className='container'>
+      {weather && (
+        <video
+          key={getWeatherVideo(weather)} // 날씨 바뀔 때 재로드
+          className="background-video"
+          autoPlay
+          loop
+          muted
+        >
+          <source src={getWeatherVideo(weather)} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
+      {loading?(
+        <div className='container'>
+          <ClipLoader color="#f88c6b" loading={loading} size={150} aria-label="Loading Spinner" data-testid="loader"/>
+        </div>
+      ) : (<div className='container'>
         <div className='boxArea'>
           <WeatherBox weather={weather}/>
         </div>
@@ -97,7 +143,8 @@ function App() {
           changeCity={changeCity}
           />
         </div>
-      </div>
+      </div>)}
+      
     </div>
   );
 }

@@ -1,10 +1,24 @@
 body{
+  /*
   background: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20130420_275%2Fsuj0506_1366464847914mQcGe_JPEG%2F1048649790.jpg&type=sc960_832);
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  */
+
   font-family: sans-serif;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .container{
@@ -43,4 +57,36 @@ body{
   border: 2px solid black;
   font-weight: bold;
   background-color: #ffdd57;
+}
+
+@media screen and (max-width: 768px) {
+  .weather-box {
+    width: 90%;
+    padding: 30px;
+    font-size: 16px;
+  }
+
+  .btnArea {
+    width: 90%;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .weather-button {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .weather-button .btn {
+    width: 100%;
+  }
+
+  .container {
+    padding: 20px;
+    height: auto;
+  }
+
+  .background-video {
+    object-fit: cover;
+  }
 }
