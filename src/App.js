@@ -30,16 +30,16 @@ function App() {
   
     switch (main) {
       case "clear":
-        return "/video/clear.mp4";
+        return "https://videos.pexels.com/video-files/1771850/1771850-hd_1920_1080_30fps.mp4";
       case "clouds":
-        return "/video/clouds.mp4";
+        return "https://videos.pexels.com/video-files/855785/855785-hd_1920_1080_24fps.mp4";
       case "rain":
       case "drizzle":
-        return "/video/rain.mp4";
+        return "https://videos.pexels.com/video-files/7663345/7663345-uhd_2732_1440_24fps.mp4";
       case "snow":
-        return "/video/snow.mp4";
+        return "https://videos.pexels.com/video-files/4419950/4419950-hd_1920_1080_24fps.mp4";
       case "thunderstorm":
-        return "/video/thunder.mp4";
+        return "https://videos.pexels.com/video-files/5908584/5908584-hd_1920_1080_25fps.mp4";
       default:
         return null;
     }
