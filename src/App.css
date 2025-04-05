@@ -33,9 +33,62 @@ body{
   width: 600px;
   border: 3px solid white;
   padding: 50px;
-  border-radius: 30px;
+  border-radius: 12px;
   background-color: beige;
   text-align: center;
+}
+
+.weather-icon {
+  margin-bottom: 16px;
+}
+
+.city-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.temperature {
+  font-size: 1.4rem; 
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.condition {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.weather-stats {
+  display: flex;
+  justify-content: space-around;
+  border-top: 2px solid #ccc;
+  padding-top: 16px;
+}
+
+.stat-item + .stat-item {
+  border-left: 2px solid #ccc;
+  margin-left: 16px;
+  padding-left: 16px;
+}
+
+.stat-item {
+  flex: 1;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .btnArea {
