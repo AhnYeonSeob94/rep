@@ -1,0 +1,144 @@
+{
+    "products":[
+        {
+            "id":0,
+            "img":"https://apyapy.kr/web/product/medium/202503/176783b18345632d312f5c648c40cfbe.jpg",
+            "title":"베지피쉬칩",
+            "price":9000,
+            "choice":true,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":1,
+            "img":"https://apyapy.kr/web/product/medium/202503/a596f9e17e095230a0b51ab21cca54ce.jpg",
+            "title":"애플캐럿터키스틱",
+            "price":9000,
+            "choice":true,
+            "new":true,
+            "amount":0
+
+        },
+        {
+            "id":2,
+            "img":"https://apyapy.kr/web/product/medium/202503/72afd8e1f904f7242393e488be1ec6c8.jpg",
+            "title":"치즈오트홀스범벅",
+            "price":10000,
+            "choice":false,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":3,
+            "img":"https://apyapy.kr/web/product/medium/202503/e754fda1125fe8853dd3c41a66fc639d.jpg",
+            "title":"베리밀크껌",
+            "price":8500,
+            "choice":false,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":4,
+            "img":"https://apyapy.kr/web/product/medium/202504/72ee65ac7217f40325e9b86f2f9e75a0.jpg",
+            "title":"비프바삭이",
+            "price":9500,
+            "choice":true,
+            "new":false,
+            "amount":100
+
+        },
+        {
+            "id":5,
+            "img":"https://apyapy.kr/web/product/medium/202503/013aac906d54715d91354063796e2fdc.jpg",
+            "title":"터키씨위드머쉬패티",
+            "price":10000,
+            "choice":false,
+            "new":false,
+            "amount":100
+
+        },
+        {
+            "id":6,
+            "img":"https://apyapy.kr/web/product/medium/202503/b110bdaab3991beb3cf284bbcf759620.jpg",
+            "title":"치즈포크오뜨",
+            "price":9000,
+            "choice":true,
+            "new":false,
+            "amount":100
+
+        },
+        {
+            "id":7,
+            "img":"https://apyapy.kr/web/product/medium/202503/cbf5eb8b3626075d50289942dc1abd00.jpg",
+            "title":"무뼈닭발",
+            "price":8500,
+            "choice":false,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":8,
+            "img":"https://apyapy.kr/web/product/medium/202503/ca7c68b711ceba43f987a5e66a74bdf5.jpg",
+            "title":"12000",
+            "price":14900,
+            "choice":true,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":9,
+            "img":"https://apyapy.kr/web/product/medium/202503/a4801fc4d33f9f3a83f002bae685bc6a.jpg",
+            "title":"터키져키",
+            "price":9900,
+            "choice":false,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":10,
+            "img":"https://apyapy.kr/web/product/medium/202504/a5267f13ceefb4ff76f08622676827cd.jpg",
+            "title":"치킨져키",
+            "price":8500,
+            "choice":true,
+            "new":false,
+            "amount":100
+
+        },
+        {
+            "id":11,
+            "img":"https://apyapy.kr/web/product/medium/202503/ff79a8ffe8938ba597ea031d0cf66cd6.jpg",
+            "title":"황태비프콰삭",
+            "price":9500,
+            "choice":true,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":12,
+            "img":"https://apyapy.kr/web/product/medium/202503/4a53ff0db447d843b9158a5691274861.jpg",
+            "title":"치즈덕져키",
+            "price":9000,
+            "choice":true,
+            "new":true,
+            "amount":100
+
+        },
+        {
+            "id":13,
+            "img":"https://apyapy.kr/web/product/medium/202503/05909fa2fc3091b000c9e8696191d380.jpg",
+            "title":"시금치페스토비프패티",
+            "price":10000,
+            "choice":false,
+            "new":false,
+            "amount":100
+
+        }
+    ]
+}
