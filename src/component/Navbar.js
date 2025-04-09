@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch, faTimes  } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
     const menuList = ['Topping','Soup','Chees','Yogurt','Puree','Desert','Snack','Add'];
     const [showSearch, setShowSearch] = useState(false);
     const [keyword, setKeyword] = useState('');
@@ -17,16 +18,31 @@ const Navbar = () => {
         alert(`'${keyword}' 검색!`);
         setShowSearch(false); // 검색 후 닫기
       };
+      const navigate = useNavigate();
+
+      const goToLogin = () =>{
+        navigate("/login");
+      }
+
+      const logout = () => {
+        setAuthenticate(false);
+        alert("로그아웃 되었습니다.");
+        navigate('/');
+      };
+
+      const goToMain = () =>{
+        navigate("/");
+      }
 
   return (
     <>
     <div>
-        <div className='login-button'>
-            <FontAwesomeIcon icon={faUser} />
-            <div>로그인</div>
+        <div className="login-button" onClick={authenticate ? logout : goToLogin}>
+          <FontAwesomeIcon icon={faUser} />
+          <div>{authenticate ? '로그아웃' : '로그인'}</div>
         </div>
         <div className='nav-section'>
-            <img width={100} src='https://apyapy.kr/ade/design/img/logo.png' alt="logo"></img>
+            <img width={100} src='https://apyapy.kr/ade/design/img/logo.png' alt="logo" onClick={goToMain}></img>
         </div>
         <div className='menu-area'>  
             <ul className='menu-list'>

@@ -2,11 +2,66 @@
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    cursor: pointer;
 }
+
+/* 배경과 정렬 */
+.login-wrapper {
+    min-height: 80vh;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 로그인 박스 */
+  .login-box {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  }
+  
+  /* 타이틀 */
+  .login-box h3 {
+    text-align: center;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 30px;
+  }
+  
+  /* 입력창 */
+  .login-box .form-control {
+    border-radius: 10px;
+  }
+  
+  /* 버튼 */
+  .login-box .btn {
+    background-color: #2e7d32;
+    border: none;
+    border-radius: 999px;
+    padding: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-box .btn:hover {
+    background-color: #1b5e20;
+  }
+  
+  /* 체크박스 텍스트 */
+  .form-check-label {
+    font-size: 14px;
+    color: #555;
+  }
 
 .nav-section{
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .menu-list{
@@ -131,12 +186,37 @@
     object-fit: cover;
     border-radius: 10px;
   }
-  .badge-icon.best {
-    color: gold;
+  .image-wrapper {
+    position: relative;
+  }
+  /* BEST / NEW 배지 */
+    .product-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 10;
   }
   
-  .badge-icon.new {
-    color: #00c4ff;
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .badge.best {
+    background-color: #ffc107; /* 노랑 */
+  }
+  
+  .badge.new {
+    background-color: #28a745; /* 초록 */
   }
 
   .sold-out {
@@ -154,7 +234,19 @@
 
   .product-card {
     position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
   }
+
+  .product-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+
+
   @media (max-width: 768px) {
     .search-icon {
       position: static;
