@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useSearchParams } from 'react-router-dom';
 
 const ProductAll = () => {
     const [productList, setProductList] = useState([]);
+    const [query] = useSearchParams();
 
     const getProducts= async()=>{
-        let url= `https://my-json-server.typicode.com/AhnYeonSeob94/projectshop/products`
+        let searchQuery = query.get('q');
+        console.log("query?:",searchQuery);
+        let url = searchQuery
+        ? `https://my-json-server.typicode.com/AhnYeonSeob94/projectshop/products?q=${searchQuery}`
+        : `https://my-json-server.typicode.com/AhnYeonSeob94/projectshop/products`;
         let resp = await fetch(url);
         let data = await resp.json();
         setProductList(data);
@@ -14,7 +20,9 @@ const ProductAll = () => {
 
     useEffect(()=>{
         getProducts();
-    },[]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[query]);
+
   return (
     <div>
         <Container>

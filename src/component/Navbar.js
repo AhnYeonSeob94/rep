@@ -5,20 +5,22 @@ import { faSearch, faTimes  } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ authenticate, setAuthenticate }) => {
-    const menuList = ['Topping','Soup','Chees','Yogurt','Puree','Desert','Snack','Add'];
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const menuList = ['Topping','Soup','Cheese','Yogurt','Puree','Desert','Snack','Add'];
     const [showSearch, setShowSearch] = useState(false);
     const [keyword, setKeyword] = useState('');
+    const navigate = useNavigate();
 
     const handleSearch = () => {
         if (keyword.trim() === '') {
           alert('검색어를 입력해주세요.');
           return;
         }
-        console.log('검색어:', keyword); // 여기서 검색 처리 로직 연결 가능
-        alert(`'${keyword}' 검색!`);
+        navigate(`/?q=${keyword}`);
         setShowSearch(false); // 검색 후 닫기
+        setKeyword(''); 
       };
-      const navigate = useNavigate();
+      
 
       const goToLogin = () =>{
         navigate("/login");
@@ -35,15 +37,33 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
       }
 
   return (
+    
     <>
-    <div>
-        <div className="login-button" onClick={authenticate ? logout : goToLogin}>
+    <div> 
+        <div className="login-button">
           <FontAwesomeIcon icon={faUser} />
-          <div>{authenticate ? '로그아웃' : '로그인'}</div>
+          <button onClick={authenticate ? logout : goToLogin}>
+            {authenticate ? '로그아웃' : '로그인'}
+          </button>
         </div>
+
+         {/* 햄버거 메뉴 버튼 (모바일용) */}
+         <div
+          className="hamburger"
+          onClick={() => setMobileMenuOpen(true)}
+          
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/*로고 영역 */}
         <div className='nav-section'>
-            <img width={100} src='https://apyapy.kr/ade/design/img/logo.png' alt="logo" onClick={goToMain}></img>
+            <img className='logo' width={100} src='https://apyapy.kr/ade/design/img/logo.png' alt="logo" onClick={goToMain}></img>
         </div>
+
+        {/* 메뉴 영역 */}
         <div className='menu-area'>  
             <ul className='menu-list'>
                 {menuList.map((menu)=>
@@ -56,6 +76,20 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
             </div>
         </div>
     </div>
+
+    {/* 모바일 메뉴 오버레이 */}
+    {mobileMenuOpen && (
+      <div className="mobile-menu-overlay" onClick={() => setMobileMenuOpen(false)}>
+        <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+          <button className="close-btn" onClick={() => setMobileMenuOpen(false)}>✕</button>
+          <ul>
+            {menuList.map(menu => (
+              <li key={menu}>{menu}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )}
 
     {/* 오버레이 검색창 */}
     {showSearch && (
@@ -70,7 +104,12 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
               type="text" 
               placeholder="검색어를 입력하세요" 
               value={keyword} 
-              onChange={e => setKeyword(e.target.value)} 
+              onChange={e => setKeyword(e.target.value)}
+              onKeyDown={(e)=>{
+                if(e.key === 'Enter'){
+                  handleSearch();
+                }
+              }} 
               autoFocus 
             />
             <button className="submit-btn" onClick={handleSearch}>검색</button>
