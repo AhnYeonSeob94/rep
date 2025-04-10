@@ -1,4 +1,4 @@
-# 쇼핑몰웹사이트 1~9
+# 쇼핑몰웹사이트 1~13
 
 1. 전체상품페이지(메인), 로그인, 상품상세페이지(디테일)  -완료
 
@@ -22,9 +22,16 @@
 
 + 상품 재고가 0 인 경우 상품디테일페이지에서 구매버튼과 카트담기 버튼이 비활성화되고 SOLD OUT!으로 변경됨
 + 로고와 로그인을 div 태그를 주고 onclick 처리했던 부분을 div안에 버튼, 로고를 두고 해당 부분에 css로 cursor:  pointer주는 방식으로 변경
-
 + 모바일 버전 메뉴바 좌측 사이드로 햄버거 -> 슬라이드 메뉴 형식으로 변경 / PC 버전 호버,폰트 조정
 + 디테일페이지 구성 변경 / db 수정 (commonInfo 추가)
++ 상품 수량 변경시 총액 계산 구현
 
-
+# 1~9
 ![스크린샷 2025-04-08 203815](https://github.com/user-attachments/assets/53a4453f-ea2a-4256-9b74-7e4b08a1d2ff)
+
+
+# 1~13
+![image](https://github.com/user-attachments/assets/57f2bbb3-4674-4a4f-a006-80dc2f7a328a)
+
+# 1~13 detail page
+![image](https://github.com/user-attachments/assets/04bd421d-4486-4792-8b89-22a50c45d2f2)
