@@ -6,7 +6,7 @@ const ProductAll = () => {
     const [productList, setProductList] = useState([]);
 
     const getProducts= async()=>{
-        let url= `http://localhost:5000/products`
+        let url= `https://my-json-server.typicode.com/AhnYeonSeob94/projectshop/products`
         let resp = await fetch(url);
         let data = await resp.json();
         setProductList(data);
