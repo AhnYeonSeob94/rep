@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.calculator {
+    max-width: 320px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .calculator h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.4rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .display {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    text-align: right;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .display .expression {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  
+  .display .current {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .display .result {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .button-grid button {
+    padding: 18px 0;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 12px;
+    background: #f0f0f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .button-grid button:hover {
+    background: #dbeeff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .equal-btn {
+    grid-column: span 2;
+    background-color: #4b90ff;
+    font-weight: bold;
+  }
+  
+  .equal-btn:hover {
+    background-color: #397ae0;
+  }
+  
+  .clear-btn {
+    grid-column: span 2;
+    background-color: #e0e0e0;
+  }
+
+  @media screen and (max-width: 480px) {
+  .calculator {
+    max-width: 95vw;
+    padding: 16px;
+  }
+
+  .calculator h2 {
+    font-size: 1.2rem;
+  }
+
+  .display {
+    padding: 12px;
+  }
+
+  .display .expression {
+    font-size: 0.8rem;
+  }
+
+  .display .current {
+    font-size: 1rem;
+  }
+
+  .display .result {
+    font-size: 1.2rem;
+  }
+
+  .button-grid {
+    gap: 8px;
+  }
+
+  .button-grid button {
+    padding: 14px 0;
+    font-size: 1rem;
+  }
+
+  .equal-btn,
+  .clear-btn {
+    font-size: 1rem;
   }
 }

@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import CountBox from './components/CountBox';
+import counterStore from './stores/counterStore';
 
 function App() {
+  // const [count,setCount] = useState(0);
+  const {count, increase, increaseBy, decrease, decreaseBy} = counterStore();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>count:{count}</h1>
+      <button onClick={increase}>increase</button>
+      <button onClick={()=>increaseBy(10)}>10씩증가</button>
+      <button onClick={decrease}>decrease</button>
+      <button onClick={()=>decreaseBy(10)}>10씩감소</button>
+      <CountBox></CountBox>
     </div>
   );
 }
