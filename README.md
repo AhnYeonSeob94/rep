@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Netflix-Project(1~5)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.네비게이션 바를 검은색으로 , 글씨는 흰색으로 바꾸자! (variant를 활용하면 쉬움)
 
-## Available Scripts
+2. netflix로고를 넣어주자
 
-In the project directory, you can run:
+3.검색버튼을 빨간색으로 바꿔주자(variant를 이용하면 쉬움)
 
-### `npm start`
+4.전체화면색을 검은색으로 바꿔주자
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5.home을 누르면 /로 Movies를 누르면 /movies로 이동하는 기능을 넣어주자!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 프로젝트 폴더 구조
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📦 Netflix-Project
+├── 📁 node_modules
+├── 📁 public
+├── 📁 src
+│   ├── 📁 layout
+│   │   └── AppLayout.jsx         # 공통 레이아웃 (NavBar, Outlet 등)
+│   ├── 📁 pages
+│   │   ├── 📁 Homepage
+│   │   │   ├── Homepage.jsx      # 메인 페이지 컴포넌트
+│   │   │   └── Homepage.scss     # 메인 페이지 스타일
+│   │   ├── 📁 MovieDetail
+│   │   │   ├── MovieDetail.jsx   # 영화 상세 페이지
+│   │   │   └── MovieDetail.scss  # 상세 페이지 스타일
+│   │   ├── 📁 Movies
+│   │   │   └── ...               # 영화 목록 관련 컴포넌트 (생략 가능)
+│   │   ├── 📁 NotFoundpage
+│   │   │   └── NotFoundPage.jsx  # 404 페이지
+│   ├── 📁 utils
+│   │   └── api.js                # API 호출 함수 정리
+│   ├── App.js                    # 라우터 설정 포함한 진입 컴포넌트
+│   ├── App.css                   # 전체 스타일
+│   ├── index.js                  # 리액트 렌더링 시작점
+│   ├── index.css                 # 글로벌 스타일
+│   ├── logo.svg
+│   └── 기타 설정 파일들
+├── .env                          # 환경변수(API 키 등)
+├── package.json
+└── README.md
