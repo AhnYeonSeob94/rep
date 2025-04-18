@@ -40,7 +40,9 @@
 
 │   │   ├── 📁 Movies
 
-│   │   │   └── ...               # 영화 목록 관련 상세 페이지, 상세 페이지 스타일
+│   │   │   ├── MoviePage.jsx   # 영화 리스트 페이지
+
+│   │   │   └── MoviePage.scss  # 영화 리스트 스타일
 
 │   │   ├── 📁 NotFoundpage
 
