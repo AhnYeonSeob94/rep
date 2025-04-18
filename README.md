@@ -41,6 +41,7 @@
 │   │   ├── 📁 Movies
 
 │   │   │   └── ...               # 영화 목록 관련 상세 페이지, 상세 페이지 스타일
+
 │   │   ├── 📁 NotFoundpage
 
 │   │   │   └── NotFoundPage.jsx  # 404 페이지
