@@ -9,6 +9,9 @@
 3. 검색 버튼을 빨간색으로 변경 (variant 활용)
 4. 전체 배경색을 검정색으로 설정
 5. Home → `/`, Movies → `/movies`로 이동 기능 추가
+6. Homepage/component Banner 제작(인기영화 중 첫번째)
+7. hooks 폴더에 공통 훅 작성 (usePopularMoives.js 등)
+8. Banner 미디어쿼리로 모바일환경에서 글씨가 넘치지않게 처리
 
 
 ## 📁 프로젝트 폴더 구조
@@ -22,15 +25,21 @@
 
 │   ├── 📁 layout
 
+│   │   └── usePopularMovies.js         # 훅 ( 인기영화가져오기 등)
+
+│   ├── 📁 layout
+
 │   │   └── AppLayout.jsx         # 공통 레이아웃 (NavBar, Outlet 등)
 
 │   ├── 📁 pages
 
 │   │   ├── 📁 Homepage
 
-│   │   │   ├── Homepage.jsx      # 메인 페이지 컴포넌트
+│   │   │   ├── Homepage.jsx      # 메인 페이지
 
 │   │   │   └── Homepage.scss     # 메인 페이지 스타일
+
+│   │   │    ├── 📁 components   # 홈페이지 내 컴포넌트 (Banner 등) 
 
 │   │   ├── 📁 MovieDetail
 
