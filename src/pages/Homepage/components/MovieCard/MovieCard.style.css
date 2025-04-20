@@ -1,0 +1,82 @@
+.movie-card {
+    width: 220px;
+    height: 330px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 60%);
+    color: white;
+    opacity: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: opacity 0.5s ease;
+  }
+  
+  .movie-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .overlay h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  
+  .genre-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .meta-info {
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .meta-info div {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .movie-card {
+      width: 100%;
+      height: 250px;
+    }
+  
+    .overlay h5 {
+      font-size: 0.95rem;
+    }
+  
+    .meta-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+  
+    .meta-info div {
+      font-size: 0.8rem;
+    }
+  }

@@ -12,6 +12,8 @@
 6. Homepage/component Banner 제작(인기영화 중 첫번째)
 7. hooks 폴더에 공통 훅 작성 (usePopularMoives.js 등)
 8. Banner 미디어쿼리로 모바일환경에서 글씨가 넘치지않게 처리
+9. 홈페이지 슬라이드 추가 (인기, top rated, upcoming)
+10. 슬라이드 내 카드 carousel 이용 반응형 디자인 호버시 확대기능
 
 
 ## 📁 프로젝트 폴더 구조
