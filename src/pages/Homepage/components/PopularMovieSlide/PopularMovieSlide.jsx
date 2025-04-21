@@ -38,8 +38,7 @@ const PopularMovieSlide = () => {
         <h3>Popular Movies</h3>
         <Carousel
         infinite={true}
-        centerMode={true}
-        itemClass="movie-slider p-1"
+        itemClass="movie-slider"
         containerClass="carousel-container"
         responsive={responsive}
         >
