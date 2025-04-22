@@ -1,6 +1,6 @@
-# Netflix-Project(1~5)
+# Netflix-Project(1~10)
 
-# 🎬 Netflix-Project (1~5 단계 구현)
+# 🎬 Netflix-Project (1~10 단계 구현)
 
 ## ✅ 구현 내용
 
@@ -14,6 +14,8 @@
 8. Banner 미디어쿼리로 모바일환경에서 글씨가 넘치지않게 처리
 9. 홈페이지 슬라이드 추가 (인기, top rated, upcoming)
 10. 슬라이드 내 카드 carousel 이용 반응형 디자인 호버시 확대기능
+11. 검색기능+ 필터링 기능 추가
+12. 페이지네이션 추가
 
 
 ## 📁 프로젝트 폴더 구조
