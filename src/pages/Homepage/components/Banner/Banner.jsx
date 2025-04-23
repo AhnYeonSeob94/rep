@@ -3,8 +3,10 @@ import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies';
 import { Alert, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Banner.style.css';
+import { useTranslation } from 'react-i18next';
 
 const Banner = () => {
+  const { t } = useTranslation();
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
@@ -42,7 +44,7 @@ const Banner = () => {
               className="read-more-btn"
               onClick={() => setExpanded(!expanded)}
             >
-              {expanded ? 'hide' : 'more...'}
+              {expanded ? t('hide') : t('moreInfo')}
             </button>
           )}
         </p>
@@ -50,7 +52,7 @@ const Banner = () => {
           className="banner-btn"
           onClick={() => navigate(`/movies/${movie.id}`)}
         >
-          More Info
+          {t('seeMore')}
         </button>
       </div>
     </div>

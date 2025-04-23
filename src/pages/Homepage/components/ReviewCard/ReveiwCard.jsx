@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './ReviewCard.style.css';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const ReviewCard = ({ review }) => {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const isLong = review.content.length > 300;
   const preview = review.content.slice(0, 300);
@@ -20,11 +22,11 @@ const ReviewCard = ({ review }) => {
         >
           {expanded ? (
             <>
-              Hide <FaChevronUp />
+              {t('hide')} <FaChevronUp />
             </>
           ) : (
             <>
-              Read More <FaChevronDown />
+              {t('more')} <FaChevronDown />
             </>
           )}
         </button>

@@ -3,8 +3,10 @@ import { useUpcomingMoviesQuery } from '../../../../hooks/useUpcomingMovies';
 import { Alert, Spinner } from 'react-bootstrap';
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import { responsive } from '../../../../constants/responsive';
+import { useTranslation } from 'react-i18next';
 
 const UpcomingMovieSlide = () => {
+  const { t } = useTranslation();
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
 
   if (isLoading) {
@@ -23,7 +25,7 @@ const UpcomingMovieSlide = () => {
     <div>
       <div>
         <MovieSlider 
-        title='Upcoming Movies'
+        title={t('upComingMovies')}
         movies={data.results}
         responsive={responsive}/>
       </div>

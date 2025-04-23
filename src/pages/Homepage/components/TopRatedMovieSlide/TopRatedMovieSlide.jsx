@@ -3,8 +3,10 @@ import { useTopRatedMoviesQuery } from '../../../../hooks/useTopRatedMovies';
 import { Alert, Spinner } from 'react-bootstrap';
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import { responsive } from '../../../../constants/responsive';
+import { useTranslation } from 'react-i18next';
 
 const TopRatedMovieSlide = () => {
+  const { t } = useTranslation();
   const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
 
   if (isLoading) {
@@ -23,7 +25,7 @@ const TopRatedMovieSlide = () => {
     <div>
       <div>
         <MovieSlider 
-        title='Top Rated Movies'
+        title={t('topRatedMovies')}
         movies={data.results}
         responsive={responsive}/>
       </div>

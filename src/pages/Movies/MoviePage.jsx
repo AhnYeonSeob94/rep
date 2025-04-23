@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchMovieQuery } from '../../hooks/useSerchMovie';
+import { useSearchMovieQuery } from '../../hooks/useSearchMovie';
 import { useSearchParams } from 'react-router-dom';
 import { Alert, Col, Container, Spinner, Row, Form } from 'react-bootstrap';
 import MovieCard from '../../common/MovieCard/MovieCard';
 import ReactPaginate from 'react-paginate';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import './MoviePage.style.css';
+import { useTranslation } from 'react-i18next';
 
 const ITEMS_PER_PAGE = 12;
 const MAX_PAGE_LIMIT = 500;
 
 const MoviePage = () => {
+  const { t } = useTranslation();
   const { data: genreList = [] } = useMovieGenreQuery();
   const [query] = useSearchParams();
   const keyword = query.get('q');
@@ -74,7 +76,6 @@ const MoviePage = () => {
     totalPages = Math.min(data?.total_pages || 1, MAX_PAGE_LIMIT);
   }
 
-  // 동적 페이지 범위 제한 (현재 페이지 + 10까지만 보이도록)
   const dynamicPageCount = Math.min(totalPages, currentPage + 10);
 
   if (isLoading) {
@@ -92,13 +93,13 @@ const MoviePage = () => {
   return (
     <Container>
       {filteredResults.length === 0 && (
-        <Alert variant="warning">검색 결과가 없습니다.</Alert>
+        <Alert variant="warning">{t('noresultData')}</Alert>
       )}
 
       <Row>
         <Col lg={4} xs={12}>
           <div className="filter-box">
-            <div className="filter-title">필터 옵션</div>
+            <div className="filter-title">{t('filterOption')}</div>
             <Form.Select
               className="mb-3"
               aria-label="장르 선택"
@@ -108,7 +109,7 @@ const MoviePage = () => {
                 setSelectedGenre(value === '' ? null : Number(value));
               }}
             >
-              <option value="">전체 장르</option>
+              <option value="">{t('allGenre')}</option>
               {genreList.map((genre) => (
                 <option key={genre.id} value={genre.id}>
                   {genre.name}
@@ -118,7 +119,7 @@ const MoviePage = () => {
 
             <Form.Check
               type="checkbox"
-              label="인기 Top 10만 보기"
+              label={t('toptenOnly')}
               className="mb-3"
               checked={showTop10}
               onChange={(e) => setShowTop10(e.target.checked)}
@@ -130,9 +131,9 @@ const MoviePage = () => {
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value)}
             >
-              <option value="">정렬 없음</option>
-              <option value="vote">평점순</option>
-              <option value="release">최신 개봉일순</option>
+              <option value="">{t('sort')}</option>
+              <option value="vote">{t('rate')}</option>
+              <option value="release">{t('recently')}</option>
             </Form.Select>
           </div>
         </Col>
