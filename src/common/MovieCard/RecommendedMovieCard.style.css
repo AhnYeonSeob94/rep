@@ -1,0 +1,36 @@
+.recommended-movie-card {
+    width: 120px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .recommended-movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .poster-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #222;
+  }
+  
+  .poster-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .title {
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  

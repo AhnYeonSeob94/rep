@@ -1,72 +1,119 @@
 .banner {
-    height: 56vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
+  min-height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.banner::before {
+  content: '';
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 70%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.banner-text-area {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .banner::before {
-    content: '';
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .banner-text-area {
-    width: 36%;
-    display: flex;
+}
+
+.banner-text-area h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.banner-text-area p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-height: none;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: pre-line;
+}
+
+.banner-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.8rem;
+  background-color: #e50914;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  max-width: 180px;
+}
+
+.banner-btn:hover {
+  background-color: #b20710;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    min-height: auto;
+    padding-bottom: 2rem;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    padding: 2rem;
-    position: relative;
-    z-index: 2;
   }
 
-  .banner-btn {
-    margin-top: 1.5rem;
-    padding: 0.5rem 1.5rem;     /* 버튼 내부 공간 줄이기 */
-    background-color: #e50914;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    font-size: 1rem;
-    max-width: 200px;
-    text-align: center;
-    }
-    .banner-btn:hover {
-    background-color: #b20710;
-    }
-
-
-
-
-  @media (max-width: 768px) {
-    .banner-text-area {
-      width: 90%;
-      padding: 1rem;
-      font-size: 0.9rem;
-      line-height: 1.3;
-    }
-  
-    .banner h1 {
-      font-size: 1.5rem;
-      word-break: keep-all;
-    }
-  
-    .banner p {
-      font-size: 0.9rem;
-      word-break: break-word;
-      overflow-wrap: break-word;
-    }
+  .banner-text-area {
+    width: 90%;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
+
+  .banner h1 {
+    font-size: 1.5rem;
+    word-break: keep-all;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner p {
+    font-size: 0.95rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #e50914;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}

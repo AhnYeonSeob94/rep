@@ -81,3 +81,13 @@
       font-size: 0.8rem;
     }
   }
+
+  .rating-stars .star {
+    color: gold;
+    font-size: 1.1rem;
+    margin-right: 2px;
+  }
+  
+  .rating-stars .star.inactive {
+    color: #666;
+  }

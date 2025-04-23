@@ -1,0 +1,52 @@
+.movie-detail-page {
+    background-color: #121212;
+  }
+  
+  .poster {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+  
+  .movie-info {
+    flex: 1;
+  }
+  
+  .genre-list .badge {
+    font-size: 0.9rem;
+    padding: 0.4em 0.7em;
+  }
+  
+  .ratings {
+    font-size: 1.2rem;
+  }
+  
+  .detail-stats {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+  }
+  
+  .detail-stats li {
+    margin-bottom: 0.5rem;
+  }
+
+  .trailer-modal-content {
+    background-color: #141414;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .trailer-modal-content .modal-header {
+    background-color: #141414;
+    border-bottom: none;
+  }
+  
+  .trailer-modal-content .modal-title {
+    color: #ffffff;
+  }
+  
+  .trailer-modal-content .btn-close {
+    filter: invert(1); /* X 닫기 버튼 흰색으로 */
+  }

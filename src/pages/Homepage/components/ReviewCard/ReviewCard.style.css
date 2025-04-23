@@ -1,0 +1,55 @@
+.review-card {
+  background-color: #111;
+  color: #fff;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-left: 4px solid #e50914;
+}
+
+.review-card .author {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.review-card .review-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.toggle-button {
+  margin-top: 1rem;
+  background: transparent;
+  color: #e50914;
+  border: 1px solid #e50914;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.toggle-button:hover {
+  background-color: #e50914;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .review-card .author {
+    font-size: 1rem;
+  }
+  .review-card .review-text {
+    font-size: 0.9rem;
+  }
+}

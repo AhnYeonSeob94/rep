@@ -12,6 +12,7 @@ const Homepage = () => {
   return (
     <div>
       <Banner/>
+      <br/>
       <PopularMovieSlide/>
       <TopRatedMovieSlide/>
       <UpcomingMovieSlide/>

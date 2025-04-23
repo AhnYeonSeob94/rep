@@ -2,6 +2,24 @@
     overflow: hidden;
     height: 440px;
 }
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #e50914; 
+    margin-top: 0.5rem;
+  }
+
 @media (max-width:480px){
     .carousel-container{
         height: 330px;

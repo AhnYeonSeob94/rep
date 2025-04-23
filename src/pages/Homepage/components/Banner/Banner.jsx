@@ -1,30 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies';
-import { Alert } from 'react-bootstrap';
-import "./Banner.style.css";
+import { Alert, Spinner } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import './Banner.style.css';
 
 const Banner = () => {
-    const {data, isLoading, isError, error} = usePopularMoviesQuery();
-    
-    if(isLoading){
-        return <h1>Loading...</h1>
-    }
-    if(isError){
-        return <Alert variant='danger'>{error.message}</Alert>
-    }
-  return (
-    <div style={{
-        backgroundImage: "url("+`https://image.tmdb.org/t/p/original${data.results[0].backdrop_path}`+")"
-        }}
-        className='banner'
-    >
-        <div className='text-white banner-text-area'>
-            <h1>{data?.results[0].title}</h1>
-            <p>{data?.results[0].overview}</p>
-            <button className="banner-btn">자세히 보기</button>
-        </div>
-    </div>
-  )
-}
+  const { data, isLoading, isError, error } = usePopularMoviesQuery();
+  const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
 
-export default Banner
+  if (isLoading) {
+    return (
+      <div className="spinner-area">
+        <Spinner animation="border" variant="danger" />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return <Alert variant="danger">{error.message}</Alert>;
+  }
+
+  const movie = data.results[0];
+  const overviewLimit = 150;
+  const isLong = movie.overview.length > overviewLimit;
+  const shortOverview = movie.overview.slice(0, overviewLimit) + '...';
+
+  return (
+    <div
+      className="banner"
+      style={{
+        backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+      }}
+    >
+      <div className="text-white banner-text-area">
+        <h1>{movie.title}</h1>
+        <p>
+          {expanded || !isLong ? movie.overview : shortOverview}
+          {isLong && (
+            <button
+              className="read-more-btn"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? 'hide' : 'more...'}
+            </button>
+          )}
+        </p>
+        <button
+          className="banner-btn"
+          onClick={() => navigate(`/movies/${movie.id}`)}
+        >
+          More Info
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;
