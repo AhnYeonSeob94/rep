@@ -62,7 +62,7 @@
 
 │   │   ├── useMovieTrailerQuery.js
 
-│   │   └── useSerchMovie.js          # (오타 → useSearchMovie.js 로 변경 권장)
+│   │   └── useSearchMovie.js         
 
 │
 
