@@ -5,11 +5,14 @@
   .poster {
     width: 300px;
     border-radius: 10px;
+    max-width: 100%;
+    height: auto;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   }
   
   .movie-info {
     flex: 1;
+    min-width: 0;
   }
   
   .genre-list .badge {
@@ -50,3 +53,16 @@
   .trailer-modal-content .btn-close {
     filter: invert(1); /* X 닫기 버튼 흰색으로 */
   }
+
+  
+@media (max-width: 768px) {
+  .movie-detail-page .d-flex {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .movie-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+}

@@ -16,7 +16,7 @@ import useLanguageStore from '../store/useLanguageStore';
 //5.home을 누르면 /로 Movies를 누르면 /movies로 이동하는 기능을 넣어주자!
 
 const AppLayout = () => {
-  const {  setLanguage } = useLanguageStore();
+  const { language ,setLanguage } = useLanguageStore();
 
   const [keyword, setKeyword] = useState('');
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ const AppLayout = () => {
               />
               <Button variant="danger" type="submit" style={{ whiteSpace: 'nowrap', minWidth: '100px' }}>{t('search')}</Button>
               <Button variant="outline-light" className="ms-2" onClick={toggleLanguage}>
-                {i18n.language === 'en' ? 'KOR' : 'ENG'}
+                {i18n.language === 'en' ? 'ENG' : 'KOR'}
               </Button>
             </Form>
           </Navbar.Collapse>
